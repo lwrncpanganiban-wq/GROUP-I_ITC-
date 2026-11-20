@@ -1,0 +1,188 @@
+body {
+	font-family: Georgia, serif;
+}
+
+body {
+  --nav-bg: #fdf3e3;      /* navbar background */
+  --text: #5a1010;        /* navbar text */
+  --pill: #4a0d0d;        /* moving tab color */
+  --pill-text: #ffffff;   /* text inside the moving tab */
+  --shade: rgba(70, 15, 15, 0.85);  /* dark layer over the hero */
+}
+
+body.dark {
+  --nav-bg: #1c1112;
+  --text: #f3dcc0;
+  --pill: #f2c04d;
+  --pill-text: #2a0a0a;
+  --shade: rgba(0, 0, 0, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 40px;
+	background: var(--nav-bg);
+	color: var(--text);
+	border-bottom: 1px solid #5a1010;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.logo {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
+
+
+/* line between the logo and the name */
+.brand-name {
+  border-left: 2px solid var(--text);   /* was #5a1010, now it follows the theme */
+  padding-left: 15px;
+}
+
+.brand-name {
+	border-left: 2px solid #5a1010;
+	padding-left: 15px;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.tabs {
+	position: relative;
+	display: flex;
+}
+
+.tabs a {
+	position: relative;
+	z-index: 1;
+	padding: 8px 22px;
+	color: var(--text);
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.tabs a.active {
+	color: var(--pill-text);
+}
+
+.pill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 0;
+	background: var(--pill);
+	border-radius: 50px;
+	transition: 0.4s;
+}
+
+#mode-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 2px solid var(--text);
+  color: var(--text);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: 2px solid var(--text);
+  color: var(--text);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sun { display: none; }
+
+body.dark .sun { display: block; }
+body.dark .moon { display: none; }
+
+.hero {
+  height: 90vh;
+  padding: 0 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+
+  background:
+    linear-gradient(to right, var(--shade), transparent),
+    url("campus.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h3 {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 28px;
+}
+
+.hero h1 {
+	font-size: 60px;
+	max-width: 500px;
+}
+
+.hero p {
+	font-style: italic;
+	font-size: 22px;
+	margin: 10px 0 25px;
+}
+
+.hero a {
+	width: 180px;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	border-radius: 50px;
+	text-decoration: none;
+}
+
+.hero a:hover {
+	background: #f2c04d;
+	color: black;
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 25px;
+    right: 30px;
+    font-size: 19px;
+    font-style: italic;
+    z-index: 2;
+}
